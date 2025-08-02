@@ -1,4 +1,69 @@
 .header {
-  background-image: ;
   width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+}
+
+.header__container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  width: 200px;
+  height: 24px;
+  opacity: 1;
+  top: 30px;
+  left: 104px;
+  font-family: Roboto Slab;
+  font-weight: 700px;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  color: #ffffff;
+  display: flex;
+  margin: 0;
+  padding-top: 30px;
+}
+
+.header__nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.header__link {
+  width: 49px;
+  height: 24px;
+  opacity: 1;
+  top: 30px;
+  left: 1069px;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #ffffff;
+  padding: 6px 12px;
+}
+
+.header__button {
+  width: 176px;
+  height: 48px;
+  opacity: 1;
+  top: 19px;
+  left: 1160px;
+  border-width: 1px;
+  border-radius: 100px;
+  border-color: white;
+  background-color: transparent;
+  color: white;
 }

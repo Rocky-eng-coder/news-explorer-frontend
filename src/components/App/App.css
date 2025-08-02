@@ -1,0 +1,9 @@
+.intro {
+  background-image: url("../../assets/images/main-background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
