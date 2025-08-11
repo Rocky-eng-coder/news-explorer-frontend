@@ -1,5 +1,9 @@
 .modal {
   position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,13 +27,32 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 430px;
+  height: 380px;
 }
 
 .modal__close {
   position: absolute;
+  top: -40px;
+  right: -40px;
+  background-image: url(../../assets/images/close-btn.svg);
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  opacity: 1;
 }
 
 .modal__title {
   font-size: 20px;
   margin-bottom: 10px;
+  width: 83px;
+  height: 32px;
+  opacity: 1;
+  font-family: Roboto;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 100%;
 }

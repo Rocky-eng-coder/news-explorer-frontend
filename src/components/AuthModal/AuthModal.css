@@ -1,7 +1,8 @@
 .auth-form {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
+  color: #2f71e5;
 }
 
 .auth-form label {
@@ -13,19 +14,26 @@
   font-size: 14px;
   border: none;
   border-bottom: 1px solid #ccc;
+  background-color: white;
+  color: black;
+  margin-bottom: 27px;
 }
 
 .auth-form button {
   padding: 12px;
-  background: #e0e0e0;
+  color: #e0e0e0;
   border: none;
-  border-radius: 25px;
-  color: #888;
+  border-radius: 100px;
+  background-color: #2f71e5;
+  height: 64px;
+  opacity: 1;
+  margin-top: 10px;
 }
 
 .auth-form__switch {
   text-align: center;
   font-size: 14px;
+  margin: 0;
 }
 
 .auth-form__switch span {

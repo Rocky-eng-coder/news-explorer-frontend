@@ -14,10 +14,7 @@ function App() {
   return (
     <div className="App">
       <div className="intro">
-        <Header
-          onSignInClick={() => setIsLoginOpen(true)}
-          onSignUpClick={() => setIsRegisterOpen(true)}
-        />
+        <Header onSignInClick={() => setIsLoginOpen(true)} />
         <Main />
       </div>
       <About />

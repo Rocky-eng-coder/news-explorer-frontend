@@ -18,6 +18,10 @@ function RegisterModal({ isOpen, onClose, onSwitch }) {
         <button type="submit" disabled>
           Sign up
         </button>
+
+        <p className="auth-form__switch">
+          or <span onClick={onSwitch}>Sign in</span>
+        </p>
       </form>
     </ModalWithForm>
   );

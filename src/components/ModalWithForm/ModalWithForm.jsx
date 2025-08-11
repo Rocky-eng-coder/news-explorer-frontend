@@ -6,7 +6,7 @@ function ModalWithForm({ title, isOpen, onClose, children }) {
 
   return (
     <div className="modal">
-      <div className="modal__overlay" onclick={onClose} />
+      <div className="modal__overlay" onClick={onClose} />
       <div className="modal__content">
         <button className="modal__close" onClick={onClose}></button>
         <h2 className="modal__title">{title}</h2>
