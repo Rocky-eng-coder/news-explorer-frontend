@@ -20,9 +20,7 @@ function RegisterModal({ isOpen, onClose, onSwitch }) {
         <label>Username</label>
         <input type="text" placeholder="Enter your username" />
 
-        <button type="submit" disabled>
-          Sign up
-        </button>
+        <button type="submit">Sign up</button>
 
         <p className="register-form__switch">
           or <span onClick={onSwitch}>Sign in</span>

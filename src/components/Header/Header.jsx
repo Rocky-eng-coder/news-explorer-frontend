@@ -1,14 +1,25 @@
 import React from "react";
-import Navigation from "../Navigation/Navigation";
+import { Link } from "react-router-dom";
 import "./Header.css";
 
 function Header({ onSignInClick }) {
   return (
     <header className="header">
-      <div className="header__container">
-        <h1 className="header__logo">NewsExplorer</h1>
-        <Navigation onSignInClick={onSignInClick} />
-      </div>
+      <Link to="/" className=" header__logo">
+        NewsExplorer
+      </Link>
+
+      <nav>
+        <Link to="/" className="nav-link">
+          Home
+        </Link>
+        <Link to="/saved-news" className="nav-link">
+          Saved articles
+        </Link>
+        <button className="navigation__button" onClick={onSignInClick}>
+          Sign In
+        </button>
+      </nav>
     </header>
   );
 }

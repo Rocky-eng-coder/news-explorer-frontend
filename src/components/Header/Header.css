@@ -2,10 +2,12 @@
   width: 1440px;
   padding: 20px 40px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   position: relative;
   z-index: 10;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  gap: 40px;
+  align-items: center;
 }
 
 .header__container {
@@ -60,4 +62,25 @@
   border-color: white;
   background-color: transparent;
   color: white;
+}
+
+.nav-link {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  padding: 6px 12px;
+  border: none;
+}
+
+.navigation__button {
+  width: 176px;
+  height: 48px;
+  border: 1px solid white;
+  border-radius: 100px;
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
 }
