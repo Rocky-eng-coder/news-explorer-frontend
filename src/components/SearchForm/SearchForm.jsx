@@ -1,11 +1,11 @@
 import "./SearchForm.css";
 
-function SearchForm() {
+function SearchForm({ onSearch }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     const query = e.target.elements.topic.value.trim();
     if (query) {
-      console.log("Searching for:", query);
+      onSearch(query);
     }
   };
 

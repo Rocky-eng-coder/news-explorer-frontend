@@ -16,11 +16,16 @@ import NewsCard from "../NewsCard/NewsCard";
 
 import "./App.css";
 
+const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
+
 function App() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState("");
+
+  const [articles, setArticles] = useState([]);
+  const [visibleCount, setVisibleCount] = useState(3);
 
   useEffect(() => {
     const storedLogin = localStorage.getItem("isLoggedIn");
@@ -62,6 +67,38 @@ function App() {
     localStorage.removeItem("isLoggedIn");
   };
 
+  const fetchNews = async (query) => {
+    const today = new Date();
+    const lastWeek = new Date(today);
+    lastWeek.setDate(today.getDate() - 7);
+
+    const from = lastWeek.toISOString().split("T")[0];
+    const to = today.toISOString().split("T")[0];
+
+    const url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(
+      query
+    )}&from=${from}&to=${to}&sortBy=publishedAt&language=en&pageSize=30&apiKey=${API_KEY}`;
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+
+      if (data.status !== "ok") {
+        console.error("API error:", data);
+        return;
+      }
+
+      setArticles(data.articles);
+      setVisibleCount(3);
+    } catch (error) {
+      console.error("Network error:", error);
+    }
+  };
+
+  const handleShowMore = () => {
+    setVisibleCount((prev) => prev + 3);
+  };
+
   return (
     <Router>
       <div className="App">
@@ -78,7 +115,39 @@ function App() {
               path="/"
               element={
                 <>
-                  <Main />
+                  <Main
+                    onSearch={fetchNews}
+                    articles={articles}
+                    visibleCount={visibleCount}
+                    onShowMore={handleShowMore}
+                    isLoggedIn={isLoggedIn}
+                  />
+
+                  {articles.length > 0 && (
+                    <section className="results-section">
+                      <h2 className="results-heading">Search results</h2>
+                      <div className="search-results">
+                        {articles
+                          .slice(0, visibleCount)
+                          .map((article, index) => (
+                            <NewsCard
+                              key={index}
+                              article={article}
+                              isLoggedIn={isLoggedIn}
+                            />
+                          ))}
+                      </div>
+                      {visibleCount < articles.length && (
+                        <button
+                          className="show-more-button"
+                          onClick={handleShowMore}
+                        >
+                          Show more
+                        </button>
+                      )}
+                    </section>
+                  )}
+
                   <About />
                 </>
               }

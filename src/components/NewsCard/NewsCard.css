@@ -7,6 +7,13 @@
   background: white;
   margin: 10px;
   max-width: 400px;
+  height: 576px;
+}
+
+.news-card__container {
+  width: 1440px;
+  height: 974px;
+  opacity: 1;
 }
 
 .news-card__image {
@@ -47,4 +54,22 @@
 
 .news-card__button {
   background-image: url(../../assets/images/savearticleicon.png);
+}
+
+.results-section {
+  width: 1440px;
+  height: 974px;
+  opacity: 1;
+}
+
+.results-heading {
+  width: 712px;
+  height: 46px;
+  font-family: Roboto Slab;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 46px;
+  letter-spacing: 0px;
+  margin-top: -80px;
+  margin-left: 104px;
 }

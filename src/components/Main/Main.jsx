@@ -1,40 +1,9 @@
 import React, { useState } from "react";
-import NewsCard from "../NewsCard/NewsCard";
 import "./Main.css";
 import SearchForm from "../SearchForm/SearchForm";
+import NewsCard from "../NewsCard/NewsCard";
 
-const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
-
-function Main() {
-  const [articles, setArticles] = useState([]);
-
-  const fetchNews = async (query) => {
-    const today = new Date();
-    const lastWeek = new Date(today);
-    lastWeek.setDate(today.getDate() - 7);
-
-    const from = lastWeek.toISOString().split("T")[0];
-    const to = today.toISOString().split("T")[0];
-
-    const url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(
-      query
-    )}&from=${from}&to=${to}&sortBy=publishedAt&language=en&pageSize=30&apiKey=${API_KEY}`;
-
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-
-      if (data.status !== "ok") {
-        console.error("API error:", data);
-        return;
-      }
-
-      setArticles(data.articles);
-    } catch (error) {
-      console.error("Network error:", error);
-    }
-  };
-
+function Main({ onSearch, articles, visibleCount, onShowMore, isLoggedIn }) {
   return (
     <section className="main">
       <div className="main__layout">
@@ -44,13 +13,7 @@ function Main() {
           account.
         </p>
 
-        <SearchForm onSearch={fetchNews} />
-
-        <div className="search-results">
-          {articles.map((article, index) => (
-            <NewsCard key={index} article={article} isLoggedIn={true} />
-          ))}
-        </div>
+        <SearchForm onSearch={onSearch} />
       </div>
     </section>
   );

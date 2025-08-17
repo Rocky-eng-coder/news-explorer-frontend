@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import NewsCard from "../NewsCard/NewsCard";
 
-function SavedNews() {
+function SavedNews({ isLoggedIn }) {
   const [savedArticles, setSavedArticles] = useState([]);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ function SavedNews() {
             <NewsCard
               key={index}
               article={article}
-              isLoggedIn={true}
+              isLoggedIn={isLoggedIn}
               onBookmark={() => {}}
             />
           ))}
