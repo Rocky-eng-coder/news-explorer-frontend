@@ -24,8 +24,11 @@ function App() {
 
   useEffect(() => {
     const storedLogin = localStorage.getItem("isLoggedIn");
-    if (storedLogin === "true") {
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+
+    if (storedLogin === "true" && storedUser) {
       setIsLoggedIn(true);
+      setUsername(storedUser.username);
     }
   }, []);
 

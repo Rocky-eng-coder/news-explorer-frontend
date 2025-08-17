@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
+import LogoutIcon from "../../assets/images/usernameLogout.svg";
 
 function Header({ onSignInClick, onLogout, isLoggedIn, username }) {
   return (
@@ -19,10 +20,10 @@ function Header({ onSignInClick, onLogout, isLoggedIn, username }) {
           </Link>
         )}
 
-        {isLoggedIn && <span className="header__welcome">{username}</span>}
         {isLoggedIn ? (
-          <button className="navigation__button" onClick={onLogout}>
-            Log Out
+          <button className="header__user-button" onClick={onLogout}>
+            <span className="header__username">{username}</span>
+            <span className="header__logout-icon" />
           </button>
         ) : (
           <button className="navigation__button" onClick={onSignInClick}>
