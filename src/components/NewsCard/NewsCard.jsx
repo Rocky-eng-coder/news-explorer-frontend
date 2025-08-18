@@ -21,7 +21,7 @@ function NewsCard({ article, isLoggedIn }) {
   };
 
   return (
-    <div className="news-card">
+    <div className="news-card__image-container">
       <img
         className="news-card__image"
         src={
@@ -30,6 +30,7 @@ function NewsCard({ article, isLoggedIn }) {
         }
         alt={article.title}
       />
+      <button className="news-card__button" onClick={saveArticle}></button>
       <div className="news-card__content">
         <p className="news-card__date">
           {new Date(article.publishedAt).toLocaleDateString()}
@@ -40,7 +41,6 @@ function NewsCard({ article, isLoggedIn }) {
         </p>
         <div className="news-card__footer">
           <span className="news-card__source">{article.source.name}</span>
-          <button className="news-card__button" onClick={saveArticle}></button>
         </div>
       </div>
     </div>
