@@ -102,84 +102,86 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <div className="intro">
-          <Header
-            onSignInClick={() => setIsLoginOpen(true)}
-            onLogout={handleLogout}
-            isLoggedIn={isLoggedIn}
-            username={username}
+        <Header
+          onSignInClick={() => setIsLoginOpen(true)}
+          onLogout={handleLogout}
+          isLoggedIn={isLoggedIn}
+          username={username}
+        />
+
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <div className="intro">
+                <Main
+                  onSearch={fetchNews}
+                  articles={articles}
+                  visibleCount={visibleCount}
+                  onShowMore={handleShowMore}
+                  isLoggedIn={isLoggedIn}
+                />
+
+                {articles.length > 0 && (
+                  <section className="results-section">
+                    <h2 className="results-heading">Search results</h2>
+                    <div className="search-results">
+                      {articles.slice(0, visibleCount).map((article, index) => (
+                        <NewsCard
+                          key={index}
+                          article={article}
+                          isLoggedIn={isLoggedIn}
+                        />
+                      ))}
+                    </div>
+                    {visibleCount < articles.length && (
+                      <button
+                        className="show-more-button"
+                        onClick={handleShowMore}
+                      >
+                        Show more
+                      </button>
+                    )}
+                  </section>
+                )}
+
+                <About />
+              </div>
+            }
           />
-
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  <Main
-                    onSearch={fetchNews}
-                    articles={articles}
-                    visibleCount={visibleCount}
-                    onShowMore={handleShowMore}
-                    isLoggedIn={isLoggedIn}
-                  />
-
-                  {articles.length > 0 && (
-                    <section className="results-section">
-                      <h2 className="results-heading">Search results</h2>
-                      <div className="search-results">
-                        {articles
-                          .slice(0, visibleCount)
-                          .map((article, index) => (
-                            <NewsCard
-                              key={index}
-                              article={article}
-                              isLoggedIn={isLoggedIn}
-                            />
-                          ))}
-                      </div>
-                      {visibleCount < articles.length && (
-                        <button
-                          className="show-more-button"
-                          onClick={handleShowMore}
-                        >
-                          Show more
-                        </button>
-                      )}
-                    </section>
-                  )}
-
-                  <About />
-                </>
-              }
-            />
-            <Route
-              path="/saved-news"
-              element={isLoggedIn ? <SavedNews /> : <Navigate to="/" replace />}
-            />
-          </Routes>
-
-          <Footer />
-
-          <LoginModal
-            isOpen={isLoginOpen}
-            onClose={() => setIsLoginOpen(false)}
-            onSwitch={() => {
-              setIsLoginOpen(false);
-              setIsRegisterOpen(true);
-            }}
-            onLogin={handleLogin}
+          <Route
+            path="/saved-news"
+            element={
+              isLoggedIn ? (
+                <SavedNews username={username} />
+              ) : (
+                <Navigate to="/" replace />
+              )
+            }
           />
+        </Routes>
 
-          <RegisterModal
-            isOpen={isRegisterOpen}
-            onClose={() => setIsRegisterOpen(false)}
-            onSwitch={() => {
-              setIsRegisterOpen(false);
-              setIsLoginOpen(true);
-            }}
-            onRegister={handleRegister}
-          />
-        </div>
+        <Footer />
+
+        <LoginModal
+          isOpen={isLoginOpen}
+          onClose={() => setIsLoginOpen(false)}
+          onSwitch={() => {
+            setIsLoginOpen(false);
+            setIsRegisterOpen(true);
+          }}
+          onLogin={handleLogin}
+        />
+
+        <RegisterModal
+          isOpen={isRegisterOpen}
+          onClose={() => setIsRegisterOpen(false)}
+          onSwitch={() => {
+            setIsRegisterOpen(false);
+            setIsLoginOpen(true);
+          }}
+          onRegister={handleRegister}
+        />
       </div>
     </Router>
   );
