@@ -113,14 +113,16 @@ function App() {
           <Route
             path="/"
             element={
-              <div className="intro">
-                <Main
-                  onSearch={fetchNews}
-                  articles={articles}
-                  visibleCount={visibleCount}
-                  onShowMore={handleShowMore}
-                  isLoggedIn={isLoggedIn}
-                />
+              <>
+                <div className="intro">
+                  <Main
+                    onSearch={fetchNews}
+                    articles={articles}
+                    visibleCount={visibleCount}
+                    onShowMore={handleShowMore}
+                    isLoggedIn={isLoggedIn}
+                  />
+                </div>
 
                 {articles.length > 0 && (
                   <section className="results-section">
@@ -144,9 +146,8 @@ function App() {
                     )}
                   </section>
                 )}
-
                 <About />
-              </div>
+              </>
             }
           />
           <Route
