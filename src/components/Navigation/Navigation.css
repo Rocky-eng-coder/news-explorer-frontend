@@ -15,7 +15,7 @@
 }
 
 .navigation__link:hover {
-  color: white;
+  color: #1a1b22;
 }
 
 .navigation__button {
@@ -30,6 +30,6 @@
 }
 
 .navigation__button:hover {
-  color: white;
-  border-color: white;
+  color: #1a1b22;
+  border-color: #1a1b22;
 }

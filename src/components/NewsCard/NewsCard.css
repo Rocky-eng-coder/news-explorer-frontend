@@ -97,10 +97,9 @@
 
 .results-section {
   width: 100%;
-  max-width: 1200px;
-  margin: 60px auto 0;
-  padding: 0 20px;
+  padding: 0 20px 80px;
   box-sizing: border-box;
+  background: rgba(245, 246, 247, 1);
 }
 
 .results-heading {
@@ -112,5 +111,6 @@
   line-height: 46px;
   letter-spacing: 0px;
   margin-top: -20px;
-  margin-left: 20px;
+  margin-left: 75px;
+  padding: 50px;
 }

@@ -24,7 +24,7 @@ function SavedNews({ isLoggedIn, username }) {
       <div className="saved-news__header">
         <p className="saved-news__info">Saved articles</p>
         <h2 className="saved-news__title">
-          {userName}, you have {savedArticles.length} saved article
+          {username}, you have {savedArticles.length} saved article
           {savedArticles.length !== 1 ? "s" : ""}
         </h2>
         <p className="saved-news__keywords">
