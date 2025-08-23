@@ -86,10 +86,10 @@ nav {
 .navigation__button {
   width: 176px;
   height: 48px;
-  border: 1px solid white;
+  border: 1px solid black;
   border-radius: 100px;
   background-color: transparent;
-  color: white;
+  color: black;
   font-size: 16px;
   cursor: pointer;
 }

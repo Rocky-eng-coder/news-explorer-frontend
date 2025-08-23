@@ -5,13 +5,28 @@ import "./LoginModal.css";
 function LoginModal({ isOpen, onClose, onSwitch, onLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [emailError, setEmailError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     onLogin({ email, password });
 
+    setEmail("");
+    setPassword("");
+
     onClose();
+  };
+
+  const handleEmailChange = (e) => {
+    const value = e.target.value;
+    setEmail(value);
+
+    if (!e.target.validity.valid && value !== "") {
+      setEmailError("Invalid email address");
+    } else {
+      setEmailError("");
+    }
   };
 
   return (
@@ -27,9 +42,10 @@ function LoginModal({ isOpen, onClose, onSwitch, onLogin }) {
           type="email"
           placeholder="Enter email"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={handleEmailChange}
           required
         />
+        {emailError && <p className="login-form__error">{emailError}</p>}
 
         <label>Password</label>
         <input
@@ -40,7 +56,9 @@ function LoginModal({ isOpen, onClose, onSwitch, onLogin }) {
           required
         />
 
-        <button type="submit">Sign in</button>
+        <button type="submit" disabled={!email || !password || !!emailError}>
+          Sign in
+        </button>
 
         <p className="login-form__switch">
           or <span onClick={onSwitch}>Sign up</span>

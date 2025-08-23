@@ -21,7 +21,12 @@
   border-bottom: 1px solid #ccc;
   background-color: white;
   color: black;
-  margin-bottom: 27px;
+  opacity: 1;
+}
+
+.login-form input::placeholder {
+  color: black;
+  opacity: 20%;
 }
 
 .login-form button {
@@ -32,7 +37,13 @@
   background-color: #2f71e5;
   height: 64px;
   opacity: 1;
-  margin-top: 10px;
+  margin-top: 43px;
+  margin-bottom: 10px;
+}
+
+.login-form button:disabled {
+  background-color: #e6e8eb;
+  color: #b6bcbf;
 }
 
 .login-form__switch {
@@ -44,4 +55,15 @@
 .login-form__switch span {
   color: #1a73e8;
   cursor: pointer;
+}
+
+.login-form__error {
+  width: 173px;
+  height: 14px;
+  opacity: 1;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: 100%;
+  color: #ff0000;
+  margin-top: 0;
 }
