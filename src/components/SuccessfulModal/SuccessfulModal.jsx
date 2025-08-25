@@ -6,9 +6,10 @@ function SuccessfulModal({ isOpen, onClose, onSignIn }) {
 
   return (
     <div className="modal">
-      <div className="modal__content">
+      <div className="modal__content modal__content--success">
+        <button className="modal__close" onClick={onClose} />
         <h2 className="modal__message">Registration successfully completed!</h2>
-        <button className="modall__link" onClick={onSignIn}>
+        <button className="modal__link" onClick={onSignIn}>
           Sign in
         </button>
       </div>

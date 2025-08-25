@@ -9,11 +9,16 @@
   justify-content: center;
 }
 
-.modal__content {
+.modal__content--success {
   background: white;
   padding: 40px;
+  width: 430px;
+  height: 182px;
+  opacity: 1;
   border-radius: 16px;
-  width: 400px;
+  gap: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .modal__message {
@@ -25,6 +30,8 @@
   width: 315px;
   height: 56px;
   opacity: 1;
+  margin-bottom: 14px;
+  margin-top: 43px;
 }
 
 .modal__link {
@@ -40,4 +47,6 @@
   opacity: 1;
   top: 392px;
   left: 541px;
+  margin-left: -85px;
+  padding: 0;
 }
