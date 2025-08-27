@@ -4,12 +4,17 @@ import "./SavedNews.css";
 
 function SavedNews({ isLoggedIn, username }) {
   const [savedArticles, setSavedArticles] = useState([]);
-  const [userName] = useState("");
 
   useEffect(() => {
     const stored = JSON.parse(localStorage.getItem("savedArticles")) || [];
     setSavedArticles(stored);
   }, []);
+
+  const handleDelete = (articleToDelete) => {
+    const updated = savedArticles.filter((a) => a.url !== articleToDelete.url);
+    setSavedArticles(updated);
+    localStorage.setItem("savedArticles", JSON.stringify(updated));
+  };
 
   const getKeywords = () => {
     const keywords = savedArticles.map((a) => a.keyword);
@@ -41,7 +46,8 @@ function SavedNews({ isLoggedIn, username }) {
               key={index}
               article={article}
               isLoggedIn={isLoggedIn}
-              onBookmark={() => {}}
+              onDelete={() => handleDelete(article)}
+              isSavedView={true}
             />
           ))}
         </div>

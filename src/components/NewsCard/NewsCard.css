@@ -95,6 +95,23 @@
   cursor: pointer;
 }
 
+.news-card__button:hover {
+  background-image: url(../../assets/images/Saveiconhover.png);
+}
+
+.news-card__button_marked {
+  background-color: #2f71e5;
+  background-image: url(../../assets/images/saveiconmarked.png);
+}
+
+.news-card__button_delete {
+  background-image: url(../../assets/images/deleteicon.png);
+}
+
+.news-card__button_delete {
+  background-image: url(../../assets/images/deleteiconhover.png);
+}
+
 .results-section {
   width: 100%;
   padding: 0 20px 80px;

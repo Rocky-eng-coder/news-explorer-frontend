@@ -13,6 +13,7 @@ import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import SavedNews from "../SavedNews/SavedNews";
 import NewsCard from "../NewsCard/NewsCard";
+import Preloader from "../Preloader/Preloader";
 
 import "./App.css";
 
@@ -23,6 +24,8 @@ function App() {
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [noResults, setNoResults] = useState(false);
 
   const [articles, setArticles] = useState([]);
   const [visibleCount, setVisibleCount] = useState(3);
@@ -68,6 +71,10 @@ function App() {
   };
 
   const fetchNews = async (query) => {
+    setIsLoading(true);
+    setNoResults(false);
+    setArticles([]);
+
     const today = new Date();
     const lastWeek = new Date(today);
     lastWeek.setDate(today.getDate() - 7);
@@ -88,10 +95,16 @@ function App() {
         return;
       }
 
-      setArticles(data.articles);
-      setVisibleCount(3);
+      if (data.articles.length === 0) {
+        setNoResults(true);
+      } else {
+        setArticles(data.articles);
+        setVisibleCount(3);
+      }
     } catch (error) {
       console.error("Network error:", error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -124,7 +137,9 @@ function App() {
                   />
                 </div>
 
-                {articles.length > 0 && (
+                {isLoading && <Preloader />}
+
+                {!isLoading && articles.length > 0 && (
                   <section className="results-section">
                     <h2 className="results-heading">Search results</h2>
                     <div className="search-results">
