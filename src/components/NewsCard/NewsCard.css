@@ -108,7 +108,7 @@
   background-image: url(../../assets/images/deleteicon.png);
 }
 
-.news-card__button_delete {
+.news-card__button_delete:hover {
   background-image: url(../../assets/images/deleteiconhover.png);
 }
 
