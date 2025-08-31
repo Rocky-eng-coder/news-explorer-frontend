@@ -26,14 +26,12 @@ function App() {
   const [username, setUsername] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [noResults, setNoResults] = useState(false);
-
   const [articles, setArticles] = useState([]);
   const [visibleCount, setVisibleCount] = useState(3);
 
   useEffect(() => {
     const storedLogin = localStorage.getItem("isLoggedIn");
     const storedUser = JSON.parse(localStorage.getItem("user"));
-
     if (storedLogin === "true" && storedUser) {
       setIsLoggedIn(true);
       setUsername(storedUser.username);
@@ -42,7 +40,6 @@ function App() {
 
   const handleLogin = ({ email, password }) => {
     const storedUser = JSON.parse(localStorage.getItem("user"));
-
     if (
       storedUser &&
       storedUser.email === email &&
@@ -78,7 +75,6 @@ function App() {
     const today = new Date();
     const lastWeek = new Date(today);
     lastWeek.setDate(today.getDate() - 7);
-
     const from = lastWeek.toISOString().split("T")[0];
     const to = today.toISOString().split("T")[0];
 
@@ -115,26 +111,29 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header
-          onSignInClick={() => setIsLoginOpen(true)}
-          onLogout={handleLogout}
-          isLoggedIn={isLoggedIn}
-          username={username}
-        />
-
         <Routes>
           <Route
             path="/"
             element={
               <>
-                <div className="intro">
-                  <Main
-                    onSearch={fetchNews}
-                    articles={articles}
-                    visibleCount={visibleCount}
-                    onShowMore={handleShowMore}
+                <div className="main-background">
+                  <Header
+                    onSignInClick={() => setIsLoginOpen(true)}
+                    onLogout={handleLogout}
                     isLoggedIn={isLoggedIn}
+                    username={username}
+                    transparent={true} // transparent on home
                   />
+
+                  <div className="intro">
+                    <Main
+                      onSearch={fetchNews}
+                      articles={articles}
+                      visibleCount={visibleCount}
+                      onShowMore={handleShowMore}
+                      isLoggedIn={isLoggedIn}
+                    />
+                  </div>
                 </div>
 
                 {isLoading && <Preloader />}
@@ -161,15 +160,26 @@ function App() {
                     )}
                   </section>
                 )}
+
                 <About />
               </>
             }
           />
+
           <Route
             path="/saved-news"
             element={
               isLoggedIn ? (
-                <SavedNews username={username} />
+                <>
+                  <Header
+                    onSignInClick={() => setIsLoginOpen(true)}
+                    onLogout={handleLogout}
+                    isLoggedIn={isLoggedIn}
+                    username={username}
+                    transparent={false}
+                  />
+                  <SavedNews username={username} isLoggedIn={isLoggedIn} />
+                </>
               ) : (
                 <Navigate to="/" replace />
               )
