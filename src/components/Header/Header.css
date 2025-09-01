@@ -1,0 +1,133 @@
+.header {
+  max-width: 100%;
+  padding: 19px 104px 13px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 10;
+  border-bottom: 1px solid rgba(209, 210, 214, 1);
+  gap: 40px;
+  align-items: center;
+}
+
+.header__logo {
+  opacity: 1;
+  font-family: Roboto Slab;
+  font-weight: 700px;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ffffff;
+  margin-left: 104px;
+  padding: 0;
+  opacity: 1;
+}
+
+.header__logo--white {
+  color: white;
+}
+
+.header__logo--white:hover {
+  color: white;
+}
+
+.header__logo--black {
+  color: black;
+}
+
+.header__logo--black:hover {
+  color: black;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.header-link {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  text-decoration: none;
+  padding: 6px 12px;
+  border: none;
+}
+
+.header-link--white {
+  color: white;
+}
+
+.header-link--white:hover {
+  color: white;
+}
+
+.header-link--black {
+  color: black;
+}
+
+.header-link--black:hover {
+  color: black;
+}
+
+.header__button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  border: 1px solid #ffffff;
+  border-radius: 100px;
+  background-color: transparent;
+  color: #ffffff;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  cursor: pointer;
+  width: 176px;
+  height: 48px;
+  justify-content: center;
+}
+
+.header__button--white {
+  border: 1px solid white;
+  color: white;
+}
+
+.header__button--white:hover {
+  border: 1px solid white;
+  color: white;
+}
+
+.header__button--black {
+  border: 1px solid black;
+  color: black;
+}
+
+.header__button--black:hover {
+  border: 1px solid black;
+}
+
+.header__username {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.header__logout-icon {
+  width: 20px;
+  height: 20px;
+  background-image: url("../../assets/images/logoutIconWhite.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.header__logout-icon--black {
+  background-image: url("../../assets/images/logoutIcon.svg");
+}
+
+.header--transparent {
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+}

@@ -1,0 +1,56 @@
+@font-face {
+  font-family: "Inter";
+  src: url("/vendors/inter-400-regular.woff2") format("woff2"),
+    url("/vendors/inter-400-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/vendors/inter-500.woff2") format("woff2"),
+    url("/vendors/inter-500.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("/vendors/roboto-400-regular.woff2") format("woff2"),
+    url("/vendors/roboto-400-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("/vendors/roboto-500.woff2") format("woff2"),
+    url("/vendors/roboto-500.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("/vendors/roboto-700.woff2") format("woff2"),
+    url("/vendors/roboto-700.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("/vendors/roboto-900.woff2") format("woff2"),
+    url("/vendors/roboto-900.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("/vendors/roboto-slab-400-regular.woff2") format("woff2"),
+    url("/vendors/roboto-slab-400-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("/vendors/roboto-slab-700.woff2") format("woff2"),
+    url("/vendors/roboto-slab-700.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
