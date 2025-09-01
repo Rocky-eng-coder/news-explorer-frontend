@@ -1,6 +1,6 @@
 import "./Footer.css";
 import githubIcon from "../../assets/images/github.svg";
-import linkedinIcon from "../../assets/images/LinkedInIcon.png";
+import linkedinIcon from "../../assets/images/LinkedInIcon.svg";
 
 function Footer() {
   return (
@@ -28,14 +28,18 @@ function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={githubIcon} alt="GitHub" className="footer__icon" />
+            <img src={githubIcon} alt="GitHubIcon" className="footer__icon" />
           </a>
           <a
             href="https://www.linkedin.com/in/racquel-bryant-b27209325/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={linkedinIcon} alt="Linkedin" className="footer__icon" />
+            <img
+              src={linkedinIcon}
+              alt="LinkedinIcon"
+              className="footer__icon"
+            />
           </a>
         </div>
       </div>

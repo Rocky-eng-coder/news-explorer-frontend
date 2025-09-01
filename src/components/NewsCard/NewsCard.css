@@ -35,7 +35,7 @@
 .news-card__date {
   color: gray;
   font-size: 0.9rem;
-  font-family: Source Sans Pro;
+  font-family: Source Sans Pro, Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
@@ -47,7 +47,7 @@
 .news-card__title {
   font-size: 1.2rem;
   margin: 10px 0;
-  font-family: Roboto Slab;
+  font-family: Roboto Slab, Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 26px;
   line-height: 30px;
@@ -58,7 +58,7 @@
 .news-card__description {
   font-size: 1rem;
   margin-bottom: 10px;
-  font-family: Roboto;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
@@ -70,7 +70,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: Roboto Slab;
+  font-family: Roboto Slab, Arial, Helvetica, sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
@@ -85,7 +85,7 @@
 }
 
 .news-card__button {
-  background-image: url(../../assets/images/savearticleicon.png);
+  background-image: url(../../assets/images/savearticleicon.svg);
   width: 40px;
   height: 40px;
   opacity: 1;
@@ -96,20 +96,20 @@
 }
 
 .news-card__button:hover {
-  background-image: url(../../assets/images/Saveiconhover.png);
+  background-image: url(../../assets/images/saveiconhover.svg);
 }
 
 .news-card__button_marked {
   background-color: #2f71e5;
-  background-image: url(../../assets/images/saveiconmarked.png);
+  background-image: url(../../assets/images/saveiconmarked.svg);
 }
 
 .news-card__button_delete {
-  background-image: url(../../assets/images/deleteicon.png);
+  background-image: url(../../assets/images/deleteicon.svg);
 }
 
 .news-card__button_delete:hover {
-  background-image: url(../../assets/images/deleteiconhover.png);
+  background-image: url(../../assets/images/deleteiconhover.svg);
 }
 
 .results-section {
@@ -122,7 +122,7 @@
 .results-heading {
   width: 712px;
   height: 46px;
-  font-family: Roboto Slab;
+  font-family: Roboto Slab, Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 40px;
   line-height: 46px;

@@ -20,11 +20,11 @@ function Header({
         NewsExplorer
       </Link>
 
-      <nav>
+      <nav className="header__nav">
         <Link
           to="/"
-          className={`nav-link ${
-            transparent ? "nav-link--white" : "nav-link--black"
+          className={`header-link ${
+            transparent ? "header-link--white" : "header-link--black"
           }`}
         >
           Home
@@ -32,8 +32,8 @@ function Header({
         {isLoggedIn && (
           <Link
             to="/saved-news"
-            className={`nav-link ${
-              transparent ? "nav-link--white" : "nav-link--black"
+            className={`header-link ${
+              transparent ? "header-link--white" : "header-link--black"
             }`}
           >
             Saved articles
@@ -41,10 +41,8 @@ function Header({
         )}
         {isLoggedIn ? (
           <button
-            className={`header__user-button ${
-              transparent
-                ? "header__user-button--white"
-                : "header__user-button--black"
+            className={`header__button ${
+              transparent ? "header__button--white" : "header__button--black"
             }`}
             onClick={onLogout}
           >
@@ -59,10 +57,8 @@ function Header({
           </button>
         ) : (
           <button
-            className={`navigation__button ${
-              transparent
-                ? "navigation__button--white"
-                : "navigation__button--black"
+            className={`header__button ${
+              transparent ? "header__button--white" : "header__button--black"
             }`}
             onClick={onSignInClick}
           >

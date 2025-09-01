@@ -12,7 +12,7 @@
 }
 
 .main-background {
-  background-image: url("../../assets/images/main-background.jpg");
+  background-image: url("../../assets/images/main-background.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -36,7 +36,7 @@
   line-height: 64px;
   letter-spacing: 0px;
   margin-bottom: 0;
-  margin-top: 160px;
+  margin-top: 80px;
   width: 608px;
   height: 128px;
   opacity: 1;

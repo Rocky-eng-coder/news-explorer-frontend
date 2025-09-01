@@ -28,6 +28,7 @@ function App() {
   const [noResults, setNoResults] = useState(false);
   const [articles, setArticles] = useState([]);
   const [visibleCount, setVisibleCount] = useState(3);
+  const [currentKeyword, setCurrentKeyword] = useState("");
 
   useEffect(() => {
     const storedLogin = localStorage.getItem("isLoggedIn");
@@ -67,10 +68,22 @@ function App() {
     localStorage.removeItem("isLoggedIn");
   };
 
+  const handleSave = (article, keyword) => {
+    const saved = JSON.parse(localStorage.getItem("savedArticles")) || [];
+    const isDuplicate = saved.some((a) => a.url === article.url);
+
+    if (!isDuplicate) {
+      const articleWithKeyword = { ...article, keyword };
+      saved.push(articleWithKeyword);
+      localStorage.setItem("savedArticles", JSON.stringify(saved));
+    }
+  };
+
   const fetchNews = async (query) => {
     setIsLoading(true);
     setNoResults(false);
     setArticles([]);
+    setCurrentKeyword(query);
 
     const today = new Date();
     const lastWeek = new Date(today);
@@ -122,7 +135,7 @@ function App() {
                     onLogout={handleLogout}
                     isLoggedIn={isLoggedIn}
                     username={username}
-                    transparent={true} // transparent on home
+                    transparent={true} 
                   />
 
                   <div className="intro">
@@ -132,6 +145,7 @@ function App() {
                       visibleCount={visibleCount}
                       onShowMore={handleShowMore}
                       isLoggedIn={isLoggedIn}
+                      currentKeyword={currentKeyword}
                     />
                   </div>
                 </div>
@@ -147,6 +161,10 @@ function App() {
                           key={index}
                           article={article}
                           isLoggedIn={isLoggedIn}
+                          currentKeyword={currentKeyword}
+                          onSave={(article) =>
+                            handleSave(article, currentKeyword)
+                          }
                         />
                       ))}
                     </div>

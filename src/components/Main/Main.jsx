@@ -3,7 +3,7 @@ import "./Main.css";
 import SearchForm from "../SearchForm/SearchForm";
 import NewsCard from "../NewsCard/NewsCard";
 
-function Main({ onSearch, articles, visibleCount, onShowMore, isLoggedIn }) {
+function Main({ onSearch }) {
   return (
     <section className="main">
       <div className="main__layout">

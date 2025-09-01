@@ -24,22 +24,20 @@
 .navigation__button {
   width: 176px;
   height: 48px;
-  border: 1px solid #000000;
   border-radius: 100px;
   background-color: transparent;
-  color: #000000;
   font-size: 16px;
   cursor: pointer;
-}
-
-.navigation__button--white {
-  border: 1px solid white;
-  color: white;
 }
 
 .navigation__button--black {
   border: 1px solid black;
   color: black;
+}
+
+.navigation__button--white {
+  border: 1px solid white;
+  color: white;
 }
 
 .navigation__button:hover {

@@ -12,7 +12,7 @@
   font-size: 28px;
   font-weight: 600;
   margin-left: 155px;
-  font-family: Roboto Slab;
+  font-family: Roboto Slab, Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 40px;
   line-height: 46px;
@@ -24,7 +24,7 @@
   font-size: 18px;
   color: #333;
   margin-left: 155px;
-  font-family: Roboto;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
@@ -47,7 +47,7 @@
 }
 
 .saved-news__info {
-  font-family: Roboto;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;

@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./NewsCard.css";
 
-function NewsCard({ article, isLoggedIn, isSavedView = false, onDelete }) {
+function NewsCard({
+  article,
+  isLoggedIn,
+  isSavedView = false,
+  onDelete,
+  onSave,
+}) {
   const [isSaved, setIsSaved] = useState(false);
 
   useEffect(() => {
@@ -16,16 +22,10 @@ function NewsCard({ article, isLoggedIn, isSavedView = false, onDelete }) {
       return;
     }
 
-    const saved = JSON.parse(localStorage.getItem("savedArticles")) || [];
-    const isDuplicate = saved.some((a) => a.url === article.url);
-
-    if (!isDuplicate) {
-      saved.push(article);
-      localStorage.setItem("savedArticles", JSON.stringify(saved));
+    if (onSave) {
+      onSave(article);
       setIsSaved(true);
       alert("Article saved!");
-    } else {
-      alert("Article saved.");
     }
   };
 
