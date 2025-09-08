@@ -19,6 +19,7 @@
 .news-card__image-container {
   position: relative;
   width: 100%;
+  border-radius: 5px;
 }
 
 .news-card__image {
@@ -26,6 +27,7 @@
   height: 200px;
   object-fit: cover;
   display: block;
+  border-radius: 7px;
 }
 
 .news-card__content {
@@ -35,7 +37,7 @@
 .news-card__date {
   color: gray;
   font-size: 0.9rem;
-  font-family: Source Sans Pro, Arial, Helvetica, sans-serif;
+  font-family: "Source Sans Pro";
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
@@ -47,7 +49,7 @@
 .news-card__title {
   font-size: 1.2rem;
   margin: 10px 0;
-  font-family: Roboto Slab, Arial, Helvetica, sans-serif;
+  font-family: "Roboto Slab";
   font-weight: 400;
   font-size: 26px;
   line-height: 30px;
@@ -58,7 +60,7 @@
 .news-card__description {
   font-size: 1rem;
   margin-bottom: 10px;
-  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-family: "Roboto";
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
@@ -70,7 +72,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: Roboto Slab, Arial, Helvetica, sans-serif;
+  font-family: "Roboto Slab";
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
@@ -122,7 +124,7 @@
 .results-heading {
   width: 712px;
   height: 46px;
-  font-family: Roboto Slab, Arial, Helvetica, sans-serif;
+  font-family: "Roboto Slab";
   font-weight: 400;
   font-size: 40px;
   line-height: 46px;
