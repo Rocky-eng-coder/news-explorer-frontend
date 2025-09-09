@@ -13,8 +13,12 @@
   border: none;
 }
 
-.nav-link--black {
+.navigation__link_theme_black {
   color: black;
+}
+
+.navigation__link_theme_white {
+  color: white;
 }
 
 .navigation__link:hover {
@@ -30,12 +34,12 @@
   cursor: pointer;
 }
 
-.navigation__button--black {
+.navigation__button_theme_black {
   border: 1px solid black;
   color: black;
 }
 
-.navigation__button--white {
+.navigation__button_theme_white {
   border: 1px solid white;
   color: white;
 }

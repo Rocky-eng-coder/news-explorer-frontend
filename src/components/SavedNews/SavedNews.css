@@ -12,7 +12,7 @@
   font-size: 28px;
   font-weight: 600;
   margin-left: 155px;
-  font-family: Roboto Slab, Arial, Helvetica, sans-serif;
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 40px;
   line-height: 46px;
@@ -24,7 +24,7 @@
   font-size: 18px;
   color: #333;
   margin-left: 155px;
-  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
@@ -38,6 +38,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding-top: 62px;
+  padding-bottom: 62px;
 }
 
 .saved-news__empty {
@@ -47,7 +48,7 @@
 }
 
 .saved-news__info {
-  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;

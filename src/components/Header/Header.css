@@ -22,19 +22,19 @@
   opacity: 1;
 }
 
-.header__logo--white {
+.header__logo_type_white {
   color: white;
 }
 
-.header__logo--white:hover {
+.header__logo_type_white:hover {
   color: white;
 }
 
-.header__logo--black {
+.header__logo_type_black {
   color: black;
 }
 
-.header__logo--black:hover {
+.header__logo_type_black:hover {
   color: black;
 }
 
@@ -45,7 +45,7 @@
   flex-wrap: wrap;
 }
 
-.header-link {
+.header__link {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 18px;
@@ -54,19 +54,19 @@
   border: none;
 }
 
-.header-link--white {
+.header__link_type_white {
   color: white;
 }
 
-.header-link--white:hover {
+.header__link_type_white:hover {
   color: white;
 }
 
-.header-link--black {
+.header__link_type_black {
   color: black;
 }
 
-.header-link--black:hover {
+.header__link_type_black:hover {
   color: black;
 }
 
@@ -89,22 +89,22 @@
   justify-content: center;
 }
 
-.header__button--white {
+.header__button_theme_white {
   border: 1px solid white;
   color: white;
 }
 
-.header__button--white:hover {
+.header__button_theme_white:hover {
   border: 1px solid white;
   color: white;
 }
 
-.header__button--black {
+.header__button_theme_black {
   border: 1px solid black;
   color: black;
 }
 
-.header__button--black:hover {
+.header__button_theme_black:hover {
   border: 1px solid black;
 }
 
@@ -113,7 +113,7 @@
   line-height: 24px;
 }
 
-.header__logout-icon {
+.header__logout-icon_theme_white {
   width: 20px;
   height: 20px;
   background-image: url("../../assets/images/logoutIconWhite.svg");
@@ -122,7 +122,7 @@
   background-position: center;
 }
 
-.header__logout-icon--black {
+.header__logout-icon_theme_black {
   background-image: url("../../assets/images/logoutIcon.svg");
 }
 

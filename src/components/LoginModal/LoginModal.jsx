@@ -34,11 +34,12 @@ function LoginModal({ isOpen, onClose, onSwitch, onLogin }) {
       title="Sign in"
       isOpen={isOpen}
       onClose={onClose}
-      containerClassName="login-modal-size"
+      containerClassName="login-modal__container"
     >
       <form className="login-form" onSubmit={handleSubmit}>
-        <label>Email</label>
+        <label className="login-form__label">Email</label>
         <input
+          className="login-form__input"
           type="email"
           placeholder="Enter email"
           value={email}
@@ -47,8 +48,9 @@ function LoginModal({ isOpen, onClose, onSwitch, onLogin }) {
         />
         {emailError && <p className="login-form__error">{emailError}</p>}
 
-        <label>Password</label>
+        <label className="login-form__label">Password</label>
         <input
+          className="login-form__input"
           type="password"
           placeholder="Enter password"
           value={password}
@@ -56,7 +58,11 @@ function LoginModal({ isOpen, onClose, onSwitch, onLogin }) {
           required
         />
 
-        <button type="submit" disabled={!email || !password || !!emailError}>
+        <button
+          className="login-form__button"
+          type="submit"
+          disabled={!email || !password || !!emailError}
+        >
           Sign in
         </button>
 

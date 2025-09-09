@@ -30,30 +30,33 @@ function NewsCard({
   };
 
   return (
-    <div className="news-card__image-container">
-      <img
-        className="news-card__image"
-        src={
-          article.urlToImage ||
-          "https://via.placeholder.com/400x200?text=No+Image"
-        }
-        alt={article.title}
-      />
-      {isSavedView ? (
-        <button
-          className="news-card__button news-card__button_delete"
-          onClick={onDelete}
-          aria-label="Delete article"
+    <div className="news-card">
+      <div className="news-card__image-container">
+        <img
+          className="news-card__image"
+          src={
+            article.urlToImage ||
+            "https://via.placeholder.com/400x200?text=No+Image"
+          }
+          alt={article.title}
         />
-      ) : (
-        <button
-          className={`news-card__button ${
-            isSaved ? "news-card__button_marked" : ""
-          }`}
-          onClick={saveArticle}
-          aria-label="Save article"
-        />
-      )}
+        {isSavedView ? (
+          <button
+            className="news-card__button news-card__button--delete"
+            onClick={onDelete}
+            aria-label="Delete article"
+          />
+        ) : (
+          <button
+            className={`news-card__button ${
+              isSaved ? "news-card__button--marked" : ""
+            }`}
+            onClick={saveArticle}
+            aria-label="Save article"
+          />
+        )}
+      </div>
+
       <div className="news-card__content">
         <p className="news-card__date">
           {new Date(article.publishedAt).toLocaleDateString()}

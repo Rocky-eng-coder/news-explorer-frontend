@@ -45,7 +45,7 @@ function RegisterModal({ isOpen, onClose, onSwitch, onRegister }) {
         title="Sign up"
         isOpen={isOpen}
         onClose={onClose}
-        containerClassName="register-modal-size"
+        containerClassName="register-modal__container"
       >
         <form className="register-form" onSubmit={handleSubmit}>
           <label>Email</label>

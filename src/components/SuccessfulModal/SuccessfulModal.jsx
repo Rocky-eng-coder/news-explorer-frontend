@@ -6,8 +6,13 @@ function SuccessfulModal({ isOpen, onClose, onSignIn }) {
 
   return (
     <div className="modal">
+      <div className="modal__overlay" onClick={onClose} />
       <div className="modal__content modal__content--success">
-        <button className="modal__close" onClick={onClose} />
+        <button
+          className="modal__close"
+          onClick={onClose}
+          aria-label="Close success modal"
+        />
         <h2 className="modal__message">Registration successfully completed!</h2>
         <button className="modal__link" onClick={onSignIn}>
           Sign in
