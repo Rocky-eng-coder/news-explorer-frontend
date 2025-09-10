@@ -8,6 +8,10 @@
   border-bottom: 1px solid rgba(209, 210, 214, 1);
   gap: 40px;
   align-items: center;
+  background-color: white;
+  transition: background-color 0.3s ease;
+  color: black;
+  height: 80px;
 }
 
 .header__logo {
@@ -126,8 +130,12 @@
   background-image: url("../../assets/images/logoutIcon.svg");
 }
 
-.header--transparent {
+.header_transparent {
   background-color: transparent;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
 }

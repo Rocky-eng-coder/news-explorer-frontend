@@ -5,6 +5,7 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import About from "../About/About";
@@ -14,6 +15,7 @@ import RegisterModal from "../RegisterModal/RegisterModal";
 import SavedNews from "../SavedNews/SavedNews";
 import NewsCard from "../NewsCard/NewsCard";
 import Preloader from "../Preloader/Preloader";
+import NoResults from "../NoResults/NoResults";
 
 import "./App.css";
 
@@ -71,7 +73,6 @@ function App() {
   const handleSave = (article, keyword) => {
     const saved = JSON.parse(localStorage.getItem("savedArticles")) || [];
     const isDuplicate = saved.some((a) => a.url === article.url);
-
     if (!isDuplicate) {
       const articleWithKeyword = { ...article, keyword };
       saved.push(articleWithKeyword);
@@ -129,57 +130,69 @@ function App() {
             path="/"
             element={
               <>
-                <div className="main-background">
-                  <Header
-                    onSignInClick={() => setIsLoginOpen(true)}
-                    onLogout={handleLogout}
-                    isLoggedIn={isLoggedIn}
-                    username={username}
-                    transparent={true} 
-                  />
+                <Header
+                  onSignInClick={() => setIsLoginOpen(true)}
+                  onLogout={handleLogout}
+                  isLoggedIn={isLoggedIn}
+                  username={username}
+                  transparent={true}
+                />
 
-                  <div className="intro">
-                    <Main
-                      onSearch={fetchNews}
-                      articles={articles}
-                      visibleCount={visibleCount}
-                      onShowMore={handleShowMore}
-                      isLoggedIn={isLoggedIn}
-                      currentKeyword={currentKeyword}
-                    />
-                  </div>
-                </div>
-
-                {isLoading && <Preloader />}
-
-                {!isLoading && articles.length > 0 && (
-                  <section className="results-section">
-                    <h2 className="results-heading">Search results</h2>
-                    <div className="search-results">
-                      {articles.slice(0, visibleCount).map((article, index) => (
-                        <NewsCard
-                          key={index}
-                          article={article}
-                          isLoggedIn={isLoggedIn}
-                          currentKeyword={currentKeyword}
-                          onSave={(article) =>
-                            handleSave(article, currentKeyword)
-                          }
-                        />
-                      ))}
+                <main>
+                  <section className="main-background">
+                    <div className="intro">
+                      <Main
+                        onSearch={fetchNews}
+                        articles={articles}
+                        visibleCount={visibleCount}
+                        onShowMore={handleShowMore}
+                        isLoggedIn={isLoggedIn}
+                        currentKeyword={currentKeyword}
+                      />
                     </div>
-                    {visibleCount < articles.length && (
-                      <button
-                        className="show-more-button"
-                        onClick={handleShowMore}
-                      >
-                        Show more
-                      </button>
-                    )}
                   </section>
-                )}
 
-                <About />
+                  {isLoading && <Preloader />}
+                  {!isLoading && noResults && <NoResults />}
+
+                  {!isLoading && articles.length > 0 && (
+                    <section className="results-section">
+                      <h2 className="results-heading">Search results</h2>
+                      <div className="search-results">
+                        {articles
+                          .slice(0, visibleCount)
+                          .map((article, index) => (
+                            <NewsCard
+                              key={index}
+                              article={article}
+                              isLoggedIn={isLoggedIn}
+                              currentKeyword={currentKeyword}
+                              onSave={(article) =>
+                                handleSave(article, currentKeyword)
+                              }
+                            />
+                          ))}
+                      </div>
+
+                      {visibleCount < articles.length && (
+                        <button
+                          className="show-more-button"
+                          onClick={handleShowMore}
+                        >
+                          Show more
+                        </button>
+                      )}
+                    </section>
+                  )}
+
+                  <section className="about-section">
+                    <About />
+                  </section>
+                </main>
+
+                <footer>
+                  <Footer />
+                </footer>
               </>
             }
           />
@@ -196,7 +209,14 @@ function App() {
                     username={username}
                     transparent={false}
                   />
-                  <SavedNews username={username} isLoggedIn={isLoggedIn} />
+
+                  <main>
+                    <SavedNews username={username} isLoggedIn={isLoggedIn} />
+                  </main>
+
+                  <footer>
+                    <Footer />
+                  </footer>
                 </>
               ) : (
                 <Navigate to="/" replace />
@@ -204,8 +224,6 @@ function App() {
             }
           />
         </Routes>
-
-        <Footer />
 
         <LoginModal
           isOpen={isLoginOpen}
