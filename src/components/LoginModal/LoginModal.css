@@ -1,4 +1,4 @@
-.login-modal-size {
+.login-modal__container {
   width: 430px;
   height: 383px;
 }
@@ -10,11 +10,11 @@
   color: #2f71e5;
 }
 
-.login-form label {
+.login-form__label {
   font-size: 14px;
 }
 
-.login-form input {
+.login-form__input {
   padding: 10px;
   font-size: 14px;
   border: none;
@@ -24,12 +24,12 @@
   opacity: 1;
 }
 
-.login-form input::placeholder {
+.login-form__input::placeholder {
   color: black;
   opacity: 20%;
 }
 
-.login-form button {
+.login-form__button {
   padding: 12px;
   color: #e0e0e0;
   border: none;
@@ -41,7 +41,7 @@
   margin-bottom: 10px;
 }
 
-.login-form button:disabled {
+.login-form__button:disabled {
   background-color: #e6e8eb;
   color: #b6bcbf;
 }

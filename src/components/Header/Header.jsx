@@ -10,11 +10,11 @@ function Header({
   transparent,
 }) {
   return (
-    <header className={`header ${transparent ? "header--transparent" : ""}`}>
+    <header className={`header ${transparent ? "header_transparent" : ""}`}>
       <Link
         to="/"
         className={`header__logo ${
-          transparent ? "header__logo--white" : "header__logo--black"
+          transparent ? "header__logo_type_white" : "header__logo_type_black"
         }`}
       >
         NewsExplorer
@@ -23,8 +23,8 @@ function Header({
       <nav className="header__nav">
         <Link
           to="/"
-          className={`header-link ${
-            transparent ? "header-link--white" : "header-link--black"
+          className={`header__link ${
+            transparent ? "header__link_type_white" : "header__link_type_black"
           }`}
         >
           Home
@@ -32,8 +32,10 @@ function Header({
         {isLoggedIn && (
           <Link
             to="/saved-news"
-            className={`header-link ${
-              transparent ? "header-link--white" : "header-link--black"
+            className={`header__link ${
+              transparent
+                ? "header__link_type_white"
+                : "header__link_type_black"
             }`}
           >
             Saved articles
@@ -42,7 +44,9 @@ function Header({
         {isLoggedIn ? (
           <button
             className={`header__button ${
-              transparent ? "header__button--white" : "header__button--black"
+              transparent
+                ? "header__button_theme_white"
+                : "header__button_theme_black"
             }`}
             onClick={onLogout}
           >
@@ -50,15 +54,17 @@ function Header({
             <span
               className={`header__logout-icon ${
                 transparent
-                  ? "header__logout-icon--white"
-                  : "header__logout-icon--black"
+                  ? "header__logout-icon_theme_white"
+                  : "header__logout-icon_theme_black"
               }`}
             />
           </button>
         ) : (
           <button
             className={`header__button ${
-              transparent ? "header__button--white" : "header__button--black"
+              transparent
+                ? "header__button_theme_white"
+                : "header__button_theme_black"
             }`}
             onClick={onSignInClick}
           >

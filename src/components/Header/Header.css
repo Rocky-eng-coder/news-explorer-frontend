@@ -8,11 +8,15 @@
   border-bottom: 1px solid rgba(209, 210, 214, 1);
   gap: 40px;
   align-items: center;
+  background-color: white;
+  transition: background-color 0.3s ease;
+  color: black;
+  height: 80px;
 }
 
 .header__logo {
   opacity: 1;
-  font-family: Roboto Slab;
+  font-family: "Roboto Slab";
   font-weight: 700px;
   font-size: 20px;
   line-height: 24px;
@@ -22,19 +26,19 @@
   opacity: 1;
 }
 
-.header__logo--white {
+.header__logo_type_white {
   color: white;
 }
 
-.header__logo--white:hover {
+.header__logo_type_white:hover {
   color: white;
 }
 
-.header__logo--black {
+.header__logo_type_black {
   color: black;
 }
 
-.header__logo--black:hover {
+.header__logo_type_black:hover {
   color: black;
 }
 
@@ -45,8 +49,8 @@
   flex-wrap: wrap;
 }
 
-.header-link {
-  font-family: Roboto, sans-serif;
+.header__link {
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 18px;
   text-decoration: none;
@@ -54,19 +58,19 @@
   border: none;
 }
 
-.header-link--white {
+.header__link_type_white {
   color: white;
 }
 
-.header-link--white:hover {
+.header__link_type_white:hover {
   color: white;
 }
 
-.header-link--black {
+.header__link_type_black {
   color: black;
 }
 
-.header-link--black:hover {
+.header__link_type_black:hover {
   color: black;
 }
 
@@ -79,7 +83,7 @@
   border-radius: 100px;
   background-color: transparent;
   color: #ffffff;
-  font-family: Roboto, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
@@ -89,22 +93,22 @@
   justify-content: center;
 }
 
-.header__button--white {
+.header__button_theme_white {
   border: 1px solid white;
   color: white;
 }
 
-.header__button--white:hover {
+.header__button_theme_white:hover {
   border: 1px solid white;
   color: white;
 }
 
-.header__button--black {
+.header__button_theme_black {
   border: 1px solid black;
   color: black;
 }
 
-.header__button--black:hover {
+.header__button_theme_black:hover {
   border: 1px solid black;
 }
 
@@ -113,7 +117,7 @@
   line-height: 24px;
 }
 
-.header__logout-icon {
+.header__logout-icon_theme_white {
   width: 20px;
   height: 20px;
   background-image: url("../../assets/images/logoutIconWhite.svg");
@@ -122,12 +126,16 @@
   background-position: center;
 }
 
-.header__logout-icon--black {
+.header__logout-icon_theme_black {
   background-image: url("../../assets/images/logoutIcon.svg");
 }
 
-.header--transparent {
+.header_transparent {
   background-color: transparent;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
 }
