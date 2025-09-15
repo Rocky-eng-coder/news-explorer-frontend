@@ -29,7 +29,7 @@ body {
 .results-heading {
   width: 712px;
   height: 46px;
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 40px;
   line-height: 46px;
@@ -59,9 +59,28 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-  .main__title {
-    font-size: 32px;
-    line-height: 38px;
-    margin-top: 60px;
+  .results-heading {
+    padding-top: 40px;
+    padding-bottom: 32px;
+    margin-bottom: 0;
+    margin-left: 0;
+  }
+  .results-section {
+    width: 100%;
+    opacity: 1;
+    top: 400px;
+    padding-left: 0;
+  }
+  .search-results {
+    justify-content: start;
+    grid-template-columns: repeat(3, 224px);
+    gap: 8px;
+    margin-left: 0;
+    margin-top: 0;
+  }
+  .show-more-button {
+    margin-left: 272px;
+    margin-top: 32px;
+    margin-bottom: 0;
   }
 }

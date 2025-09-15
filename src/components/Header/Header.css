@@ -16,7 +16,7 @@
 
 .header__logo {
   opacity: 1;
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
   font-weight: 700px;
   font-size: 20px;
   line-height: 24px;
@@ -50,7 +50,7 @@
 }
 
 .header__link {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 18px;
   text-decoration: none;
@@ -83,7 +83,7 @@
   border-radius: 100px;
   background-color: transparent;
   color: #ffffff;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
@@ -138,4 +138,37 @@
   top: 0;
   left: 0;
   right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 16px 20px;
+    gap: 16px;
+    height: 66px;
+  }
+
+  .header__nav {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .header__button {
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px 16px;
+    margin-top: 12px;
+    margin-right: 40px;
+  }
+
+  .header__logo {
+    margin-left: 40px;
+    margin-top: 22px;
+  }
+
+  .header__link {
+    margin-top: 18px;
+  }
 }
