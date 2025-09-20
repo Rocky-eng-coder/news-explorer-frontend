@@ -12,9 +12,9 @@ function About() {
           Figma, JavaScript, React, and mongoDB.
         </p>
         <p className="about__paragraph">
-          I started TripleTen last year in August and have learned a lot along
-          the way. I am excited to complete the program and begin my career
-          acceleration process.
+          I started TripleTen in August of last year and have learned a lot
+          along the way. I am excited to complete the program and begin my
+          career acceleration process.
         </p>
       </div>
     </section>

@@ -7,7 +7,6 @@
   background: white;
   margin: 10px;
   max-width: 400px;
-  height: 576px;
 }
 
 .news-card__image-container {
@@ -73,6 +72,7 @@
   letter-spacing: 0.4px;
   text-transform: uppercase;
   color: rgba(182, 188, 191, 1);
+  margin-top: auto;
 }
 
 .news-card__source {
@@ -111,7 +111,6 @@
 @media screen and (max-width: 768px) {
   .news-card {
     width: 224px;
-    height: 420px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -173,5 +172,21 @@
   .news-card__button--marked {
     background-color: #2f71e5;
     background-image: url(../../assets/images/saveiconmarked.svg);
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .news-card {
+    max-width: 288px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .news-card__image-container {
+    width: 288px;
+    min-height: 196px;
+  }
+  .news-card__button {
+    left: 230px;
+    top: 16px;
   }
 }

@@ -26,7 +26,7 @@ function SavedNews({ isLoggedIn, username }) {
 
   return (
     <section className="saved-news">
-      <div className="saved-news__header">
+      <div className="saved-news__content">
         <p className="saved-news__info">Saved articles</p>
         <h2 className="saved-news__title">
           {username}, you have {savedArticles.length} saved article
