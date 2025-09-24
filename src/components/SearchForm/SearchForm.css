@@ -54,10 +54,10 @@
 
 @media screen and (max-width: 768px) {
   .search-form {
-    width: 100%;
+    max-width: 452px;
     height: 56px;
     opacity: 1;
-    margin-left: 0;
+    margin-left: 160px;
     margin-top: 48px;
     border-width: 1px;
     font-family: "Roboto", Arial, Helvetica, sans-serif;

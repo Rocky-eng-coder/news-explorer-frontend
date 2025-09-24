@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Header.css";
 import menuIconWhite from "../../assets/images/menuicon.svg";
 import menuIconBlack from "../../assets/images/menuicon-black.svg";
-import closeIcon from "../../assets/images/close-btn.svg"; 
+import closeIcon from "../../assets/images/close-btn.svg";
 
 function Header({
   onSignInClick,
@@ -47,7 +47,7 @@ function Header({
           {isLoggedIn && (
             <Link
               to="/saved-news"
-              className={`header__link ${
+              className={`header__link header__link_savedArticle ${
                 transparent
                   ? "header__link_type_white"
                   : "header__link_type_black"
