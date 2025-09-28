@@ -3,6 +3,7 @@
   padding: 0 104px;
   display: flex;
   justify-content: space-between;
+  padding: 0;
   margin: 0 auto;
   z-index: 10;
   border-bottom: 1px solid rgba(209, 210, 214, 1);
@@ -16,10 +17,11 @@
 
 .header__logo {
   font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
-  font-weight: 700px;
+  font-weight: 700;
   font-size: 20px;
   line-height: 24px;
-  color: #ffffff;
+  color: white;
+  margin-left: 104px;
 }
 
 .header__logo_type_white {
@@ -43,14 +45,11 @@
   align-items: center;
   gap: 24px;
   flex-wrap: wrap;
+  margin-right: 104px;
 }
 
 .header__link {
-  width: 49px;
-  height: 24px;
-  top: 30px;
-  left: 921px;
-  opacity: 1;
+  position: relative;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 18px;
@@ -62,8 +61,8 @@
 .header__link_savedArticle {
   width: 114px;
   height: 24px;
-  top: 30px;
-  left: 1046px;
+  position: relative;
+  color: #b6bcbf;
 }
 
 .header__link_type_white {
@@ -152,6 +151,30 @@
   left: 0;
   right: 0;
 }
+.header__link_active {
+  position: relative;
+}
+
+.header__link_active_white::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: white;
+}
+
+.header__link_active_black::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: black;
+}
+
 .header__menu-icon {
   width: 24px;
   height: 24px;
@@ -161,10 +184,12 @@
   .header {
     padding: 0 40px;
     height: 66px;
+    gap: 20;
   }
 
   .header__nav {
     gap: 12px;
+    margin-right: 0;
   }
 
   .header__button {
@@ -175,6 +200,13 @@
 
   .header__logo {
     width: 200px;
+    margin-left: 0;
+    font-family: Roboto Slab;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    vertical-align: middle;
   }
 
   .header__logout-icon_theme_black {
@@ -182,9 +214,10 @@
   }
   .header__menu-icon {
     display: none;
+    background-color: transparent;
   }
 
-  @media screen and (max-width: 320px) {
+  @media screen and (min-width: 320px) and (max-width: 480px) {
     .header {
       padding: 0;
       height: 56px;
@@ -272,7 +305,7 @@
       font-size: 18px;
       font-weight: 500;
       cursor: pointer;
-      width: 100%;
+      width: 288px;
     }
     .header__menu-icon {
       display: block;

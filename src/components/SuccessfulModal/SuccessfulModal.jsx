@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 import "./SuccessfulModal.css";
 
 function SuccessfulModal({ isOpen, onClose, onSignIn }) {
@@ -21,5 +21,9 @@ function SuccessfulModal({ isOpen, onClose, onSignIn }) {
     </div>
   );
 }
-
+SuccessfulModal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  onSignIn: PropTypes.func.isRequired,
+};
 export default SuccessfulModal;

@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { NavLink, Link } from "react-router-dom";
 import "./Header.css";
+import PropTypes from "prop-types";
 import menuIconWhite from "../../assets/images/menuicon.svg";
 import menuIconBlack from "../../assets/images/menuicon-black.svg";
 import closeIcon from "../../assets/images/close-btn.svg";
@@ -20,42 +21,60 @@ function Header({
   return (
     <>
       <header className={`header ${transparent ? "header_transparent" : ""}`}>
-        <Link
+        <NavLink
           to="/"
           className={`header__logo ${
             transparent ? "header__logo_type_white" : "header__logo_type_black"
           }`}
         >
           NewsExplorer
-        </Link>
+        </NavLink>
 
         <button className="header__menu-icon" onClick={toggleMenu}>
           <img src={transparent ? menuIconWhite : menuIconBlack} alt="Menu" />
         </button>
 
         <nav className="header__nav">
-          <Link
+          <NavLink
             to="/"
-            className={`header__link ${
-              transparent
-                ? "header__link_type_white"
-                : "header__link_type_black"
-            }`}
-          >
-            Home
-          </Link>
-          {isLoggedIn && (
-            <Link
-              to="/saved-news"
-              className={`header__link header__link_savedArticle ${
+            className={({ isActive }) =>
+              `header__link ${
                 transparent
                   ? "header__link_type_white"
                   : "header__link_type_black"
-              }`}
+              } ${
+                isActive
+                  ? transparent
+                    ? "header__link_active_white"
+                    : "header__link_active_black"
+                  : ""
+              }`
+            }
+          >
+            Home
+          </NavLink>
+
+          {isLoggedIn && (
+            <NavLink
+              to="/saved-news"
+              className={({ isActive }) =>
+                `header__link header__link_savedArticle ${
+                  transparent
+                    ? "header__link_type_white"
+                    : "header__link_type_black"
+                } ${
+                  isActive
+                    ? transparent
+                      ? "header__link_active_white"
+                      : "header__link_active_black"
+                    : ""
+                }`
+              }
             >
               Saved articles
-            </Link>
+            </NavLink>
           )}
+
           {isLoggedIn ? (
             <button
               className={`header__button ${
@@ -130,5 +149,13 @@ function Header({
     </>
   );
 }
+
+Header.propTypes = {
+  onSignInClick: PropTypes.func.isRequired,
+  onLogout: PropTypes.func.isRequired,
+  isLoggedIn: PropTypes.bool.isRequired,
+  username: PropTypes.string.isRequired,
+  transparent: PropTypes.bool.isRequired,
+};
 
 export default Header;

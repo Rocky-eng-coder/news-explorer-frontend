@@ -107,7 +107,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (min-width: 320px) and (max-width: 480px) {
   .search-form {
     flex-direction: column;
     align-items: center;

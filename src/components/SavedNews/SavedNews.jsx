@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import NewsCard from "../NewsCard/NewsCard";
 import "./SavedNews.css";
 
@@ -38,7 +39,9 @@ function SavedNews({ isLoggedIn, username }) {
       </div>
 
       {savedArticles.length === 0 ? (
-        <p className="saved-news__empty">You haven't saved any articles yet.</p>
+        <p className="saved-news__empty">
+          You haven&apos;t saved any articles yet.
+        </p>
       ) : (
         <div className="saved-news__cards">
           {savedArticles.map((article, index) => (
@@ -55,5 +58,9 @@ function SavedNews({ isLoggedIn, username }) {
     </section>
   );
 }
+SavedNews.propTypes = {
+  isLoggedIn: PropTypes.bool.isRequired,
+  username: PropTypes.string.isRequired,
+};
 
 export default SavedNews;

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import "./SearchForm.css";
 
 function SearchForm({ onSearch }) {
@@ -23,5 +24,7 @@ function SearchForm({ onSearch }) {
     </form>
   );
 }
-
+SearchForm.propTypes = {
+  onSearch: PropTypes.func.isRequired,
+};
 export default SearchForm;

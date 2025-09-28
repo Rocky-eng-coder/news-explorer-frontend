@@ -68,7 +68,7 @@
   margin-top: 0;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (min-width: 320px) and (max-width: 480px) {
   .login-modal__container {
     height: 560px;
     opacity: 1;

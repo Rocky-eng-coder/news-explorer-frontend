@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import "./NewsCard.css";
 
 function NewsCard({
@@ -72,5 +73,21 @@ function NewsCard({
     </div>
   );
 }
+NewsCard.propTypes = {
+  article: PropTypes.shape({
+    url: PropTypes.string.isRequired,
+    urlToImage: PropTypes.string,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    publishedAt: PropTypes.string.isRequired,
+    source: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+  isLoggedIn: PropTypes.bool.isRequired,
+  isSavedView: PropTypes.bool,
+  onDelete: PropTypes.func,
+  onSave: PropTypes.func,
+};
 
 export default NewsCard;

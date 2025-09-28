@@ -5,8 +5,9 @@
   border-radius: 8px;
   overflow: hidden;
   background: white;
-  width: 400px;
-  height: 576px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
   margin: 0 auto;
 }
 
@@ -178,7 +179,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (min-width: 320px) and (max-width: 480px) {
   .news-card {
     width: 100%;
     max-width: 288px;
@@ -195,7 +196,7 @@
     margin-bottom: 8px;
     width: 100%;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }

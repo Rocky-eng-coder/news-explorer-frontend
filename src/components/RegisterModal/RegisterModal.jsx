@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "./RegisterModal.css";
 import SuccessfulModal from "../SuccessfulModal/SuccessfulModal";
+import PropTypes from "prop-types";
 
 function RegisterModal({ isOpen, onClose, onSwitch, onRegister }) {
   const [email, setEmail] = useState("");
@@ -98,5 +99,11 @@ function RegisterModal({ isOpen, onClose, onSwitch, onRegister }) {
     </>
   );
 }
+RegisterModal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  onSwitch: PropTypes.func.isRequired,
+  onRegister: PropTypes.func.isRequired,
+};
 
 export default RegisterModal;
