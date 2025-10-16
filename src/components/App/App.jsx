@@ -124,7 +124,7 @@ function App() {
 
   return (
     <Router>
-      <div className="App">
+      <div className={`App ${isLoggedIn ? "signed-in" : "signed-out"}`}>
         <Routes>
           <Route
             path="/"
@@ -157,21 +157,23 @@ function App() {
 
                   {!isLoading && articles.length > 0 && (
                     <section className="results-section">
-                      <h2 className="results-heading">Search results</h2>
-                      <div className="search-results">
-                        {articles
-                          .slice(0, visibleCount)
-                          .map((article, index) => (
-                            <NewsCard
-                              key={index}
-                              article={article}
-                              isLoggedIn={isLoggedIn}
-                              currentKeyword={currentKeyword}
-                              onSave={(article) =>
-                                handleSave(article, currentKeyword)
-                              }
-                            />
-                          ))}
+                      <div className="results-inner">
+                        <h2 className="results-heading">Search results</h2>
+                        <div className="search-results">
+                          {articles
+                            .slice(0, visibleCount)
+                            .map((article, index) => (
+                              <NewsCard
+                                key={index}
+                                article={article}
+                                isLoggedIn={isLoggedIn}
+                                currentKeyword={currentKeyword}
+                                onSave={(article) =>
+                                  handleSave(article, currentKeyword)
+                                }
+                              />
+                            ))}
+                        </div>
                       </div>
 
                       {visibleCount < articles.length && (
@@ -190,9 +192,7 @@ function App() {
                   </section>
                 </main>
 
-                <footer>
-                  <Footer />
-                </footer>
+                <Footer />
               </>
             }
           />
@@ -214,9 +214,7 @@ function App() {
                     <SavedNews username={username} isLoggedIn={isLoggedIn} />
                   </main>
 
-                  <footer>
-                    <Footer />
-                  </footer>
+                  <Footer />
                 </>
               ) : (
                 <Navigate to="/" replace />

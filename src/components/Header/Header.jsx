@@ -21,44 +21,27 @@ function Header({
   return (
     <>
       <header className={`header ${transparent ? "header_transparent" : ""}`}>
-        <NavLink
-          to="/"
-          className={`header__logo ${
-            transparent ? "header__logo_type_white" : "header__logo_type_black"
-          }`}
-        >
-          NewsExplorer
-        </NavLink>
-
-        <button className="header__menu-icon" onClick={toggleMenu}>
-          <img src={transparent ? menuIconWhite : menuIconBlack} alt="Menu" />
-        </button>
-
-        <nav className="header__nav">
+        <div className="header__container">
           <NavLink
             to="/"
-            className={({ isActive }) =>
-              `header__link ${
-                transparent
-                  ? "header__link_type_white"
-                  : "header__link_type_black"
-              } ${
-                isActive
-                  ? transparent
-                    ? "header__link_active_white"
-                    : "header__link_active_black"
-                  : ""
-              }`
-            }
+            className={`header__logo ${
+              transparent
+                ? "header__logo_type_white"
+                : "header__logo_type_black"
+            }`}
           >
-            Home
+            NewsExplorer
           </NavLink>
 
-          {isLoggedIn && (
+          <button className="header__menu-icon" onClick={toggleMenu}>
+            <img src={transparent ? menuIconWhite : menuIconBlack} alt="Menu" />
+          </button>
+
+          <nav className="header__nav">
             <NavLink
-              to="/saved-news"
+              to="/"
               className={({ isActive }) =>
-                `header__link header__link_savedArticle ${
+                `header__link ${
                   transparent
                     ? "header__link_type_white"
                     : "header__link_type_black"
@@ -71,41 +54,62 @@ function Header({
                 }`
               }
             >
-              Saved articles
+              Home
             </NavLink>
-          )}
 
-          {isLoggedIn ? (
-            <button
-              className={`header__button ${
-                transparent
-                  ? "header__button_theme_white"
-                  : "header__button_theme_black"
-              }`}
-              onClick={onLogout}
-            >
-              <span className="header__username">{username}</span>
-              <span
-                className={`header__logout-icon ${
+            {isLoggedIn && (
+              <NavLink
+                to="/saved-news"
+                className={({ isActive }) =>
+                  `header__link header__link_savedArticle ${
+                    transparent
+                      ? "header__link_type_white"
+                      : "header__link_type_black"
+                  } ${
+                    isActive
+                      ? transparent
+                        ? "header__link_active_white"
+                        : "header__link_active_black"
+                      : ""
+                  }`
+                }
+              >
+                Saved articles
+              </NavLink>
+            )}
+
+            {isLoggedIn ? (
+              <button
+                className={`header__button ${
                   transparent
-                    ? "header__logout-icon_theme_white"
-                    : "header__logout-icon_theme_black"
+                    ? "header__button_theme_white"
+                    : "header__button_theme_black"
                 }`}
-              />
-            </button>
-          ) : (
-            <button
-              className={`header__button ${
-                transparent
-                  ? "header__button_theme_white"
-                  : "header__button_theme_black"
-              }`}
-              onClick={onSignInClick}
-            >
-              Sign In
-            </button>
-          )}
-        </nav>
+                onClick={onLogout}
+              >
+                <span className="header__username">{username}</span>
+                <span
+                  className={`header__logout-icon ${
+                    transparent
+                      ? "header__logout-icon_theme_white"
+                      : "header__logout-icon_theme_black"
+                  }`}
+                />
+              </button>
+            ) : (
+              <button
+                className={`header__button ${
+                  transparent
+                    ? "header__button_theme_white"
+                    : "header__button_theme_black"
+                }`}
+                onClick={onSignInClick}
+              >
+                Sign In
+              </button>
+            )}
+          </nav>
+        </div>
       </header>
 
       {isMenuOpen && (
