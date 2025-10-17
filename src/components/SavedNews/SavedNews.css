@@ -44,6 +44,7 @@
   padding-left: 102px;
   padding-right: 104px;
   padding-top: 62px;
+  padding-bottom: 62px;
 }
 
 .saved-news__empty {
@@ -83,6 +84,7 @@
   }
   .saved-news__title {
     margin-left: 40px;
+    max-width: 336px;
   }
   .saved-news__keywords {
     margin-left: 40px;
