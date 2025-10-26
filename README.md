@@ -14,4 +14,9 @@ Currently, two official plugins are available:
 
 # News Explorer Frontend
 
-> > > > > > > 9903d488f9481996541951ffd89a590a0f45d5f1
+**images**
+![alt text](/src/assets/images/authorimage.jpg)
+![alt text](/src/assets/images/LinkedinIcon.svg)
+![alt text](/src/assets/images/github.svg)
+![alt text](/src/assets/images/menuicon-black.svg)
+![alt text](/src/assets/images/savearticleicon.svg)
