@@ -2,6 +2,9 @@
 
 # React + Vite
 
+News Explorer is a React application that allows users to search for articles by keyword using a news API. This application will allow users to save news articles to their profiles. When the user enters a keyword in the search bar, the website sends a request to the News API service, finds all the relevant articles over the last week, and displays these articles on the page.
+It should display all articles a user saves on a separate page that is also the protected route.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules. .
 
 Currently, two official plugins are available:
