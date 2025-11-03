@@ -1,4 +1,5 @@
 import "./Navigation.css";
+import PropTypes from "prop-types";
 
 function Navigation({ onSignInClick, theme = "black" }) {
   return (
@@ -18,5 +19,9 @@ function Navigation({ onSignInClick, theme = "black" }) {
     </nav>
   );
 }
+Navigation.propTypes = {
+  onSignInClick: PropTypes.func.isRequired,
+  theme: PropTypes.string,
+};
 
 export default Navigation;

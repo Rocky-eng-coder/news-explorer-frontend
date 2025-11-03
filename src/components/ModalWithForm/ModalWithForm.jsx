@@ -1,5 +1,5 @@
-import React from "react";
 import "./ModalWithForm.css";
+import PropTypes from "prop-types";
 
 function ModalWithForm({
   title,
@@ -21,5 +21,11 @@ function ModalWithForm({
     </div>
   );
 }
-
+ModalWithForm.propTypes = {
+  title: PropTypes.string.isRequired,
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
+  containerClassName: PropTypes.string,
+};
 export default ModalWithForm;

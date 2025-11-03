@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import "./Footer.css";
 import githubIcon from "../../assets/images/github.svg";
 import linkedinIcon from "../../assets/images/LinkedInIcon.svg";
@@ -10,9 +11,15 @@ function Footer() {
       </p>
       <div className="footer__right">
         <nav className="footer__nav">
-          <a href="/" className="footer__link">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? "footer__link footer__link--active" : "footer__link"
+            }
+          >
             Home
-          </a>
+          </NavLink>
+
           <a
             href="https://tripleten.com"
             className="footer__link"
@@ -27,6 +34,7 @@ function Footer() {
             href="https://github.com"
             target="_blank"
             rel="noopener noreferrer"
+            className="footer__icon"
           >
             <img src={githubIcon} alt="GitHubIcon" className="footer__icon" />
           </a>
